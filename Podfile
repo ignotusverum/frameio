@@ -4,8 +4,6 @@ use_modular_headers!
 inhibit_all_warnings! # supresses pods project warnings
 
 def common
-  pod 'IQKeyboardManagerSwift', '6.2.1'
-  
   pod 'MERLin', :git => 'https://github.com/gringoireDM/MERLin.git', :branch => 'master'
 end
 
@@ -19,5 +17,6 @@ abstract_target 'Modules' do
   pod 'RxDataSources'
 
   # - Targets
+  target 'ProjectsModule'
   target 'FrameIOFoundation'
 end

@@ -32,11 +32,29 @@
 		5A7CB55423CE78F100C09A09 /* ProjectsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55323CE78F100C09A09 /* ProjectsContainer.swift */; };
 		5A7CB55623CE798400C09A09 /* EntitiesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55523CE798400C09A09 /* EntitiesUtil.swift */; };
 		5A7CB55923CE79C900C09A09 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55823CE79C900C09A09 /* Date.swift */; };
+		5A7CB56323CE7D0E00C09A09 /* ProjectsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A7CB56623CE7D0E00C09A09 /* ProjectsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */; };
+		5A7CB56723CE7D0E00C09A09 /* ProjectsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63871A832B988CE842431EE3 /* Pods_Modules_FrameIOFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */; };
+		7BA9E13A0042C6D220AF875C /* Pods_Modules_ProjectsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5A7CB52A23CE5F2200C09A09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A7CB4E923CE435800C09A09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A7CB52423CE5F2200C09A09;
+			remoteInfo = FrameIOFoundation;
+		};
+		5A7CB56423CE7D0E00C09A09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A7CB4E923CE435800C09A09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A7CB55E23CE7D0E00C09A09;
+			remoteInfo = ProjectsModule;
+		};
+		5A7CB56B23CE7D1A00C09A09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A7CB4E923CE435800C09A09 /* Project object */;
 			proxyType = 1;
@@ -52,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5A7CB56723CE7D0E00C09A09 /* ProjectsModule.framework in Embed Frameworks */,
 				5A7CB52D23CE5F2200C09A09 /* FrameIOFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -62,6 +81,7 @@
 /* Begin PBXFileReference section */
 		31D4EAC1103FB7B783CCF1C5 /* Pods_frameio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frameio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DBB7FD72D8D006955750C7 /* Pods-frameio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frameio.release.xcconfig"; path = "Target Support Files/Pods-frameio/Pods-frameio.release.xcconfig"; sourceTree = "<group>"; };
+		530B2C15D69164456D241D8B /* Pods-Modules-ProjectsModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-ProjectsModule.release.xcconfig"; path = "Target Support Files/Pods-Modules-ProjectsModule/Pods-Modules-ProjectsModule.release.xcconfig"; sourceTree = "<group>"; };
 		5A7CB4F123CE435800C09A09 /* frameio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frameio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7CB4F423CE435800C09A09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A7CB4F623CE435800C09A09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,10 +108,15 @@
 		5A7CB55323CE78F100C09A09 /* ProjectsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsContainer.swift; sourceTree = "<group>"; };
 		5A7CB55523CE798400C09A09 /* EntitiesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesUtil.swift; sourceTree = "<group>"; };
 		5A7CB55823CE79C900C09A09 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProjectsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectsModule.h; sourceTree = "<group>"; };
+		5A7CB56223CE7D0E00C09A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C028587EDE924626A00941D /* Pods-Modules-FrameIOFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.debug.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		9349152A0D9AB7DC7AB71AD9 /* Pods-Modules-FrameIOFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.release.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modules_ProjectsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A6D17AF481EC260E947899 /* Pods-frameio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frameio.debug.xcconfig"; path = "Target Support Files/Pods-frameio/Pods-frameio.debug.xcconfig"; sourceTree = "<group>"; };
 		E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modules_FrameIOFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C6F87B0E62F4B125A648B6 /* Pods-Modules-ProjectsModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-ProjectsModule.debug.xcconfig"; path = "Target Support Files/Pods-Modules-ProjectsModule/Pods-Modules-ProjectsModule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5116139DC14D47A91C4E164A /* Pods_frameio.framework in Frameworks */,
+				5A7CB56623CE7D0E00C09A09 /* ProjectsModule.framework in Frameworks */,
 				5A7CB52C23CE5F2200C09A09 /* FrameIOFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A7CB55C23CE7D0E00C09A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA9E13A0042C6D220AF875C /* Pods_Modules_ProjectsModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,6 +154,7 @@
 			children = (
 				5A7CB4F323CE435800C09A09 /* frameio */,
 				5A7CB52623CE5F2200C09A09 /* FrameIOFoundation */,
+				5A7CB56023CE7D0E00C09A09 /* ProjectsModule */,
 				5A7CB4F223CE435800C09A09 /* Products */,
 				831D873DBA53C9D0A80CA368 /* Pods */,
 				82C08855B35DA7C38CA05C2E /* Frameworks */,
@@ -131,6 +166,7 @@
 			children = (
 				5A7CB4F123CE435800C09A09 /* frameio.app */,
 				5A7CB52523CE5F2200C09A09 /* FrameIOFoundation.framework */,
+				5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,11 +265,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5A7CB56023CE7D0E00C09A09 /* ProjectsModule */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */,
+				5A7CB56223CE7D0E00C09A09 /* Info.plist */,
+			);
+			path = ProjectsModule;
+			sourceTree = "<group>";
+		};
 		82C08855B35DA7C38CA05C2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				31D4EAC1103FB7B783CCF1C5 /* Pods_frameio.framework */,
 				E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */,
+				9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,6 +291,8 @@
 				39DBB7FD72D8D006955750C7 /* Pods-frameio.release.xcconfig */,
 				5C028587EDE924626A00941D /* Pods-Modules-FrameIOFoundation.debug.xcconfig */,
 				9349152A0D9AB7DC7AB71AD9 /* Pods-Modules-FrameIOFoundation.release.xcconfig */,
+				F4C6F87B0E62F4B125A648B6 /* Pods-Modules-ProjectsModule.debug.xcconfig */,
+				530B2C15D69164456D241D8B /* Pods-Modules-ProjectsModule.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -257,6 +305,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7CB52923CE5F2200C09A09 /* FrameIOFoundation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7CB55A23CE7D0E00C09A09 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7CB56323CE7D0E00C09A09 /* ProjectsModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +334,7 @@
 			);
 			dependencies = (
 				5A7CB52B23CE5F2200C09A09 /* PBXTargetDependency */,
+				5A7CB56523CE7D0E00C09A09 /* PBXTargetDependency */,
 			);
 			name = frameio;
 			productName = frameio;
@@ -303,6 +360,26 @@
 			productReference = 5A7CB52523CE5F2200C09A09 /* FrameIOFoundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		5A7CB55E23CE7D0E00C09A09 /* ProjectsModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A7CB56823CE7D0E00C09A09 /* Build configuration list for PBXNativeTarget "ProjectsModule" */;
+			buildPhases = (
+				91B9B0B5FE9BAFB82F825B44 /* [CP] Check Pods Manifest.lock */,
+				5A7CB55A23CE7D0E00C09A09 /* Headers */,
+				5A7CB55B23CE7D0E00C09A09 /* Sources */,
+				5A7CB55C23CE7D0E00C09A09 /* Frameworks */,
+				5A7CB55D23CE7D0E00C09A09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A7CB56C23CE7D1A00C09A09 /* PBXTargetDependency */,
+			);
+			name = ProjectsModule;
+			productName = ProjectsModule;
+			productReference = 5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,6 +396,9 @@
 					5A7CB52423CE5F2200C09A09 = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
+					};
+					5A7CB55E23CE7D0E00C09A09 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -337,6 +417,7 @@
 			targets = (
 				5A7CB4F023CE435800C09A09 /* frameio */,
 				5A7CB52423CE5F2200C09A09 /* FrameIOFoundation */,
+				5A7CB55E23CE7D0E00C09A09 /* ProjectsModule */,
 			);
 		};
 /* End PBXProject section */
@@ -353,6 +434,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5A7CB52323CE5F2200C09A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7CB55D23CE7D0E00C09A09 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,6 +466,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-frameio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91B9B0B5FE9BAFB82F825B44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Modules-ProjectsModule-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -458,6 +568,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A7CB55B23CE7D0E00C09A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -465,6 +582,16 @@
 			isa = PBXTargetDependency;
 			target = 5A7CB52423CE5F2200C09A09 /* FrameIOFoundation */;
 			targetProxy = 5A7CB52A23CE5F2200C09A09 /* PBXContainerItemProxy */;
+		};
+		5A7CB56523CE7D0E00C09A09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A7CB55E23CE7D0E00C09A09 /* ProjectsModule */;
+			targetProxy = 5A7CB56423CE7D0E00C09A09 /* PBXContainerItemProxy */;
+		};
+		5A7CB56C23CE7D1A00C09A09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A7CB52423CE5F2200C09A09 /* FrameIOFoundation */;
+			targetProxy = 5A7CB56B23CE7D1A00C09A09 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -701,6 +828,62 @@
 			};
 			name = Release;
 		};
+		5A7CB56923CE7D0E00C09A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4C6F87B0E62F4B125A648B6 /* Pods-Modules-ProjectsModule.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9CHSEMW6LK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ProjectsModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = octoent.ProjectsModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5A7CB56A23CE7D0E00C09A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530B2C15D69164456D241D8B /* Pods-Modules-ProjectsModule.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9CHSEMW6LK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ProjectsModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = octoent.ProjectsModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -727,6 +910,15 @@
 			buildConfigurations = (
 				5A7CB52F23CE5F2200C09A09 /* Debug */,
 				5A7CB53023CE5F2200C09A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A7CB56823CE7D0E00C09A09 /* Build configuration list for PBXNativeTarget "ProjectsModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7CB56923CE7D0E00C09A09 /* Debug */,
+				5A7CB56A23CE7D0E00C09A09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
