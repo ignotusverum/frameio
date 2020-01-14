@@ -26,6 +26,12 @@
 		5A7CB54623CE645500C09A09 /* NetworkingConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB54523CE645500C09A09 /* NetworkingConfigurable.swift */; };
 		5A7CB54823CE64AC00C09A09 /* ProjectsAPIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB54723CE64AC00C09A09 /* ProjectsAPIConfigurable.swift */; };
 		5A7CB54A23CE64E600C09A09 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB54923CE64E600C09A09 /* APIConfig.swift */; };
+		5A7CB54D23CE6A2C00C09A09 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB54C23CE6A2C00C09A09 /* Project.swift */; };
+		5A7CB54F23CE6AB800C09A09 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB54E23CE6AB800C09A09 /* Team.swift */; };
+		5A7CB55223CE72A600C09A09 /* APIDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55123CE72A600C09A09 /* APIDecodable.swift */; };
+		5A7CB55423CE78F100C09A09 /* ProjectsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55323CE78F100C09A09 /* ProjectsContainer.swift */; };
+		5A7CB55623CE798400C09A09 /* EntitiesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55523CE798400C09A09 /* EntitiesUtil.swift */; };
+		5A7CB55923CE79C900C09A09 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB55823CE79C900C09A09 /* Date.swift */; };
 		63871A832B988CE842431EE3 /* Pods_Modules_FrameIOFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +82,12 @@
 		5A7CB54523CE645500C09A09 /* NetworkingConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfigurable.swift; sourceTree = "<group>"; };
 		5A7CB54723CE64AC00C09A09 /* ProjectsAPIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsAPIConfigurable.swift; sourceTree = "<group>"; };
 		5A7CB54923CE64E600C09A09 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		5A7CB54C23CE6A2C00C09A09 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		5A7CB54E23CE6AB800C09A09 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5A7CB55123CE72A600C09A09 /* APIDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDecodable.swift; sourceTree = "<group>"; };
+		5A7CB55323CE78F100C09A09 /* ProjectsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsContainer.swift; sourceTree = "<group>"; };
+		5A7CB55523CE798400C09A09 /* EntitiesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesUtil.swift; sourceTree = "<group>"; };
+		5A7CB55823CE79C900C09A09 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5C028587EDE924626A00941D /* Pods-Modules-FrameIOFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.debug.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		9349152A0D9AB7DC7AB71AD9 /* Pods-Modules-FrameIOFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.release.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		A3A6D17AF481EC260E947899 /* Pods-frameio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frameio.debug.xcconfig"; path = "Target Support Files/Pods-frameio/Pods-frameio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +153,7 @@
 		5A7CB52623CE5F2200C09A09 /* FrameIOFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				5A7CB55723CE79C000C09A09 /* Extensions */,
 				5A7CB52723CE5F2200C09A09 /* FrameIOFoundation.h */,
 				5A7CB52823CE5F2200C09A09 /* Info.plist */,
 				5A7CB53223CE5F2F00C09A09 /* AppError.swift */,
@@ -152,9 +165,11 @@
 		5A7CB53623CE5F9600C09A09 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5A7CB54B23CE695500C09A09 /* Models */,
 				5A7CB53723CE5FA400C09A09 /* Adapters */,
 				5A7CB53323CE5F2F00C09A09 /* APIManager.swift */,
 				5A7CB53C23CE603000C09A09 /* Request.swift */,
+				5A7CB55523CE798400C09A09 /* EntitiesUtil.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -185,6 +200,33 @@
 				5A7CB54723CE64AC00C09A09 /* ProjectsAPIConfigurable.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		5A7CB54B23CE695500C09A09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB55023CE729B00C09A09 /* Protocol */,
+				5A7CB54C23CE6A2C00C09A09 /* Project.swift */,
+				5A7CB55323CE78F100C09A09 /* ProjectsContainer.swift */,
+				5A7CB54E23CE6AB800C09A09 /* Team.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A7CB55023CE729B00C09A09 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB55123CE72A600C09A09 /* APIDecodable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5A7CB55723CE79C000C09A09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB55823CE79C900C09A09 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		82C08855B35DA7C38CA05C2E /* Frameworks */ = {
@@ -401,12 +443,18 @@
 			files = (
 				5A7CB54623CE645500C09A09 /* NetworkingConfigurable.swift in Sources */,
 				5A7CB53523CE5F2F00C09A09 /* APIManager.swift in Sources */,
+				5A7CB55623CE798400C09A09 /* EntitiesUtil.swift in Sources */,
 				5A7CB54A23CE64E600C09A09 /* APIConfig.swift in Sources */,
+				5A7CB55423CE78F100C09A09 /* ProjectsContainer.swift in Sources */,
 				5A7CB53423CE5F2F00C09A09 /* AppError.swift in Sources */,
 				5A7CB53D23CE603000C09A09 /* Request.swift in Sources */,
+				5A7CB55223CE72A600C09A09 /* APIDecodable.swift in Sources */,
 				5A7CB53923CE5FC000C09A09 /* ProjectsAdapter.swift in Sources */,
+				5A7CB55923CE79C900C09A09 /* Date.swift in Sources */,
 				5A7CB54823CE64AC00C09A09 /* ProjectsAPIConfigurable.swift in Sources */,
 				5A7CB53B23CE600300C09A09 /* NetworkingAdapter.swift in Sources */,
+				5A7CB54F23CE6AB800C09A09 /* Team.swift in Sources */,
+				5A7CB54D23CE6A2C00C09A09 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
