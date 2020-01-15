@@ -14,7 +14,7 @@ enum ProjectsUIAction: EventProtocol {
 }
 
 enum ProjectsModelAction: EventProtocol {
-    case sectionsChanged(sections: [Project])
+    case sectionsChanged(_ sections: ProjectsContainer)
 }
 
 enum ProjectsActions: EventProtocol {

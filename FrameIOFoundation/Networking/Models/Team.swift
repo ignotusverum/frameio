@@ -13,6 +13,8 @@ public struct Team: Decodable {
     public var type: String
     public var name: String?
     
+    public var projects: [Project] = []
+    
     enum CodingKeys: String, CodingKey {
         case id
         case type

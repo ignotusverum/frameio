@@ -16,6 +16,19 @@ class ProjectsRoutingListener: ModuleEventsListener {
     
     func listenEvents(from module: AnyEventsProducerModule,
                       events: Observable<ProjectsEvents>) -> Bool {
+        
+        events.capture(case: ProjectsEvents.projectSelected)
+            .toRoutableObservable()
+            .subscribe(onNext: { project in
+                guard let team = project.team else {
+                    print("[DEBUG] - Project \(project.name) selected")
+                    return
+                }
+                
+                print("[DEBUG] - Project \(project.name) selected for team \(team.id)")
+            })
+            .disposed(by: module.disposeBag)
+        
         return true
     }
 }

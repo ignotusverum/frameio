@@ -10,7 +10,7 @@ import MERLin
 import FrameIOFoundation
 
 enum ProjectsState: CaseAccessible, Equatable {
-    case sections([Project])
+    case sections([ProjectsSection])
     static func reduce(_ state: ProjectsState,
                        action: ProjectsUIAction) -> ProjectsState {
         switch (state, action) {
@@ -24,36 +24,51 @@ enum ProjectsState: CaseAccessible, Equatable {
                        model: ProjectsModelAction) -> ProjectsState {
         switch (state, model) {
         case let (.sections(_),
-                  .sectionsChanged(newSections)):
-            switch newSections.count {
-            case let count where 1...5 ~= count:
-                /// If the user has 5 or fewer projects, the recent sections should be empty
-                return .sections([])
-            case let count where 5...10 ~= count:
-                /// If the user has greater than 5 and fewer than 10, the recent section should contain (n -5) projects, where n is the total number of projects
-                let nElementsSlice = newSections.prefix(count - 5)
-                return .sections(Array(nElementsSlice))
-            case let count where count > 10:
-                /// If the user has greater than 10 projects, the recent section should container 5 projects
-                let nElementsSlice = newSections.prefix(5)
-                return .sections(Array(nElementsSlice))
-            default: break
-            }
+                  .sectionsChanged(newDatasource)):
             
-            return .sections(newSections)
+            let recentSection = recentSectionConfigurator(with: "Recent",
+                                                          projects: newDatasource.projects)
+            
+            let teamSections = teamSectionConfigurator(with: newDatasource.teams,
+                                                       projects: newDatasource.projects)
+            
+            return .sections(([recentSection] + teamSections)
+                .compactMap { $0 })
+        }
+    }
+
+    private static func recentSectionConfigurator(with title: String,
+                                                  projects: [Project])-> ProjectsSection? {
+        switch projects.count {
+        case let count where 1...5 ~= count:
+            /// If the user has 5 or fewer projects, the recent sections should be empty
+            return .recent(title, [])
+        case let count where 5...10 ~= count:
+            /// If the user has greater than 5 and fewer than 10, the recent section should contain (n -5) projects, where n is the total number of projects
+            let nElementsSlice = projects.prefix(count - 5)
+            return .recent(title, Array(nElementsSlice))
+        case let count where count > 10:
+            /// If the user has greater than 10 projects, the recent section should container 5 projects
+            let nElementsSlice = projects.prefix(5)
+            return .recent(title, Array(nElementsSlice))
+        default: return nil
         }
     }
     
-    static func == (lhs: ProjectsState, rhs: ProjectsState) -> Bool {
-        switch (lhs, rhs) {
-        case let (.sections(lSections),
-                  .sections(rSections)): return lSections.isEqual(rSections)
+    private static func teamSectionConfigurator(with teams: [Team],
+                                         projects: [Project])-> [ProjectsSection] {
+        teams.map { team -> ProjectsSection in
+            var team = team
+            team.projects = projects.filter({$0.team?.id == team.id })
+            
+            return .list(team,
+                         team.projects)
         }
     }
 }
 
-extension Array where Element == Project {
-    func isEqual(_ array: [Project]) -> Bool {
-        zip(self, array).reduce(count == array.count) { $0 && $1.0 == $1.1 }
+extension Array where Element: Equatable {
+    func indexes(ofItemsNotEqualTo item: Element) -> [Int]  {
+        enumerated().compactMap { $0.element != item ? $0.offset : nil }
     }
 }

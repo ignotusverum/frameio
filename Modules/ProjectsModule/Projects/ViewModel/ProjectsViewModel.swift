@@ -43,7 +43,7 @@ class ProjectsViewModel: ProjectsViewModelProtocol {
                                             Observable.merge(ProjectsAdapter
                                                 .fetchProjects()
                                                 .asObservable()
-                                                .map { ProjectsModelAction.sectionsChanged(sections: $0.projects) })
+                                                .map(ProjectsModelAction.sectionsChanged))
                                             .map(ProjectsActions.model)
         })
             .sendSideEffects({ state in

@@ -14,7 +14,7 @@ import MERLin
 import FrameUIKit
 
 extension Project: IdentifiableType {
-    public var identity: String { return id }
+    public var identity: String { return UUID().uuidString }
 }
 
 class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayout {
@@ -87,9 +87,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         states.capture(case: ProjectsState.sections)
             .asDriverIgnoreError()
-            .map {
-                $0.map { AnimatableSectionModel(model: $0.name,
-                                                items: [$0]) } }
+            .map { $0.map(self.createAnimatableSection) }
             .drive(collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
@@ -131,6 +129,15 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width,
                height: 40)
+    }
+    
+    private func createAnimatableSection(_ section: ProjectsSection)-> AnimatableSectionModel<String, Project> {
+        switch section {
+        case let .recent(title, projects): return AnimatableSectionModel(model: title,
+                                                                         items: projects)
+        case let .list(team, projects): return AnimatableSectionModel(model: "\(team.name ?? "Unknown")",
+                                                                      items: projects)
+        }
     }
 }
 

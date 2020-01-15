@@ -14,7 +14,7 @@ public struct Project: Decodable, Equatable {
     public var name: String
     public var updatedAt: Date?
     
-    public var teams: Team?
+    public var team: Team?
     
     enum CodingKeys: String, CodingKey {
         case attributes
@@ -45,7 +45,7 @@ public struct Project: Decodable, Equatable {
         name = try attributes.decode(String.self, forKey: .name)
         updatedAt = try attributes.decode(Date.self, forKey: .updatedAt)
         
-        teams = try relationships.decode(Team.self, forKey: .team)
+        team = try relationships.decode(Team.self, forKey: .team)
     }
     
     public static func == (lhs: Project, rhs: Project) -> Bool { lhs.id == rhs.id }
