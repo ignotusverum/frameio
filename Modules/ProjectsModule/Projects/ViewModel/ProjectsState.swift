@@ -11,21 +11,26 @@ import FrameIOFoundation
 
 enum ProjectsState: CaseAccessible, Equatable {
     case sections([ProjectsSection])
+    
+    indirect case loading(whileInState: ProjectsState?)
+    
     static func reduce(_ state: ProjectsState,
                        action: ProjectsUIAction) -> ProjectsState {
         switch (state, action) {
+            // Reload
+        case let (.loading(aState), .reload):
+                return .loading(whileInState: aState)
+            case (.sections, .reload):
+                return .loading(whileInState: state)
         // Not changing state
-        case (.sections(_),
-              .itemSelected(_)): return state
+        default: return state
         }
     }
     
     static func reduce(_ state: ProjectsState,
                        model: ProjectsModelAction) -> ProjectsState {
         switch (state, model) {
-        case let (.sections(_),
-                  .sectionsChanged(newDatasource)):
-            
+        case (_, .loaded(let newDatasource)):
             let recentSection = recentSectionConfigurator(with: "Recent",
                                                           projects: newDatasource.projects)
             

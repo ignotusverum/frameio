@@ -10,11 +10,12 @@ import MERLin
 import FrameIOFoundation
 
 enum ProjectsUIAction: EventProtocol {
+    case reload
     case itemSelected(Project)
 }
 
 enum ProjectsModelAction: EventProtocol {
-    case sectionsChanged(_ sections: ProjectsContainer)
+    case loaded(_ sections: ProjectsContainer)
 }
 
 enum ProjectsActions: EventProtocol {

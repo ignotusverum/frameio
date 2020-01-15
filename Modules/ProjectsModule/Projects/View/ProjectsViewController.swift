@@ -37,6 +37,12 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
                                 kind: UICollectionView.elementKindSectionHeader)
     }
     
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    
+    let refreshControl = UIRefreshControl() <~ {
+        $0.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    }
+    
     var dataSource: RxCollectionViewSectionedAnimatedDataSource<AnimatableSectionModel<String, Project>>!
     
     init(with viewModel: ProjectsViewModel) {
@@ -63,6 +69,11 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
         super.loadView()
         view.addSubview(collectionView)
         
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        
+        collectionView.addSubview(refreshControl)
+        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -74,6 +85,13 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
     private func bindViewModel() {
         collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.actions.onNext(.reload)
+            })
+            .disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
@@ -82,15 +100,31 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
                 self.actions.onNext(.itemSelected(item))
             })
             .disposed(by: disposeBag)
-        
+
         let states = viewModel.transform(input: actions).publish()
-        
+
         states.capture(case: ProjectsState.sections)
             .asDriverIgnoreError()
             .map { $0.map(self.createAnimatableSection) }
+            .do(onNext: { [weak self] _ in
+                self?.refreshControl.endRefreshing()
+            })
             .drive(collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
+
+        states.capture(case: ProjectsState.loading).toVoid()
+        .asDriverIgnoreError()
+        .drive(onNext: { [weak self] in
+            self?.activityIndicator.startAnimating()
+        }).disposed(by: disposeBag)
+
+        states.exclude(case: ProjectsState.loading)
+            .toVoid()
+            .asDriverIgnoreError()
+            .drive(onNext: { [weak self] in
+                self?.activityIndicator.stopAnimating()
+            }).disposed(by: disposeBag)
+
         states.connect()
             .disposed(by: disposeBag)
     }
@@ -121,14 +155,14 @@ class ProjectsViewController: UIViewController, UICollectionViewDelegateFlowLayo
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width,
-               height: 45)
+               height: 60)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width,
-               height: 40)
+               height: 55)
     }
     
     private func createAnimatableSection(_ section: ProjectsSection)-> AnimatableSectionModel<String, Project> {
