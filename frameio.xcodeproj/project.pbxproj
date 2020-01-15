@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		5116139DC14D47A91C4E164A /* Pods_frameio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D4EAC1103FB7B783CCF1C5 /* Pods_frameio.framework */; };
 		5A7CB4F523CE435800C09A09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB4F423CE435800C09A09 /* AppDelegate.swift */; };
-		5A7CB4F723CE435800C09A09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB4F623CE435800C09A09 /* SceneDelegate.swift */; };
-		5A7CB4F923CE435800C09A09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB4F823CE435800C09A09 /* ViewController.swift */; };
-		5A7CB4FC23CE435800C09A09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7CB4FA23CE435800C09A09 /* Main.storyboard */; };
 		5A7CB4FE23CE435900C09A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7CB4FD23CE435900C09A09 /* Assets.xcassets */; };
 		5A7CB50123CE435900C09A09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7CB4FF23CE435900C09A09 /* LaunchScreen.storyboard */; };
 		5A7CB52923CE5F2200C09A09 /* FrameIOFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7CB52723CE5F2200C09A09 /* FrameIOFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +38,13 @@
 		5A7CB57923CE7F1000C09A09 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57823CE7F1000C09A09 /* ProjectsViewModel.swift */; };
 		5A7CB57C23CE87FF00C09A09 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57B23CE87FF00C09A09 /* ObservableType.swift */; };
 		5A7CB57F23CE885500C09A09 /* weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57E23CE885500C09A09 /* weakify.swift */; };
+		5A7CB58123CE921E00C09A09 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB58023CE921E00C09A09 /* ProjectsViewController.swift */; };
+		5A7CB58523CE928300C09A09 /* ProjectsRoutingListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB58423CE928300C09A09 /* ProjectsRoutingListener.swift */; };
+		5A7CB58723CE929400C09A09 /* MainRoutingListenerAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB58623CE929400C09A09 /* MainRoutingListenerAggregator.swift */; };
+		5A7CB58A23CE92C900C09A09 /* ProjectsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB58923CE92C900C09A09 /* ProjectsStep.swift */; };
+		5A7CB58E23CE942A00C09A09 /* TabbarControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB58D23CE942A00C09A09 /* TabbarControllerRouter.swift */; };
+		5A7CB59223CE96DC00C09A09 /* AppDelegateRoutingEventsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB59123CE96DC00C09A09 /* AppDelegateRoutingEventsListener.swift */; };
+		5A7CB59423CE96F600C09A09 /* AppDelegateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB59323CE96F600C09A09 /* AppDelegateEvent.swift */; };
 		63871A832B988CE842431EE3 /* Pods_Modules_FrameIOFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */; };
 		7BA9E13A0042C6D220AF875C /* Pods_Modules_ProjectsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */; };
 /* End PBXBuildFile section */
@@ -90,9 +94,6 @@
 		530B2C15D69164456D241D8B /* Pods-Modules-ProjectsModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-ProjectsModule.release.xcconfig"; path = "Target Support Files/Pods-Modules-ProjectsModule/Pods-Modules-ProjectsModule.release.xcconfig"; sourceTree = "<group>"; };
 		5A7CB4F123CE435800C09A09 /* frameio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frameio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7CB4F423CE435800C09A09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A7CB4F623CE435800C09A09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5A7CB4F823CE435800C09A09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A7CB4FB23CE435800C09A09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A7CB4FD23CE435900C09A09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7CB50023CE435900C09A09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A7CB50223CE435900C09A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +124,13 @@
 		5A7CB57823CE7F1000C09A09 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		5A7CB57B23CE87FF00C09A09 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		5A7CB57E23CE885500C09A09 /* weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weakify.swift; sourceTree = "<group>"; };
+		5A7CB58023CE921E00C09A09 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		5A7CB58423CE928300C09A09 /* ProjectsRoutingListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRoutingListener.swift; sourceTree = "<group>"; };
+		5A7CB58623CE929400C09A09 /* MainRoutingListenerAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoutingListenerAggregator.swift; sourceTree = "<group>"; };
+		5A7CB58923CE92C900C09A09 /* ProjectsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsStep.swift; sourceTree = "<group>"; };
+		5A7CB58D23CE942A00C09A09 /* TabbarControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerRouter.swift; sourceTree = "<group>"; };
+		5A7CB59123CE96DC00C09A09 /* AppDelegateRoutingEventsListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRoutingEventsListener.swift; sourceTree = "<group>"; };
+		5A7CB59323CE96F600C09A09 /* AppDelegateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateEvent.swift; sourceTree = "<group>"; };
 		5C028587EDE924626A00941D /* Pods-Modules-FrameIOFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.debug.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		9349152A0D9AB7DC7AB71AD9 /* Pods-Modules-FrameIOFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.release.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modules_ProjectsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,14 +194,15 @@
 		5A7CB4F323CE435800C09A09 /* frameio */ = {
 			isa = PBXGroup;
 			children = (
+				5A7CB58C23CE942300C09A09 /* Router */,
+				5A7CB58823CE92C000C09A09 /* Routes */,
+				5A7CB58223CE926A00C09A09 /* EventListeners */,
 				5A7CB54123CE642200C09A09 /* Networking */,
 				5A7CB4F423CE435800C09A09 /* AppDelegate.swift */,
-				5A7CB4F623CE435800C09A09 /* SceneDelegate.swift */,
-				5A7CB4F823CE435800C09A09 /* ViewController.swift */,
-				5A7CB4FA23CE435800C09A09 /* Main.storyboard */,
 				5A7CB4FD23CE435900C09A09 /* Assets.xcassets */,
 				5A7CB4FF23CE435900C09A09 /* LaunchScreen.storyboard */,
 				5A7CB50223CE435900C09A09 /* Info.plist */,
+				5A7CB59323CE96F600C09A09 /* AppDelegateEvent.swift */,
 			);
 			path = frameio;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 		5A7CB57023CE7E1C00C09A09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A7CB58023CE921E00C09A09 /* ProjectsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +340,40 @@
 				5A7CB57E23CE885500C09A09 /* weakify.swift */,
 			);
 			path = Functional;
+			sourceTree = "<group>";
+		};
+		5A7CB58223CE926A00C09A09 /* EventListeners */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB58323CE927100C09A09 /* MainRoutingListeners */,
+				5A7CB58623CE929400C09A09 /* MainRoutingListenerAggregator.swift */,
+				5A7CB59123CE96DC00C09A09 /* AppDelegateRoutingEventsListener.swift */,
+			);
+			path = EventListeners;
+			sourceTree = "<group>";
+		};
+		5A7CB58323CE927100C09A09 /* MainRoutingListeners */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB58423CE928300C09A09 /* ProjectsRoutingListener.swift */,
+			);
+			path = MainRoutingListeners;
+			sourceTree = "<group>";
+		};
+		5A7CB58823CE92C000C09A09 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB58923CE92C900C09A09 /* ProjectsStep.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		5A7CB58C23CE942300C09A09 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB58D23CE942A00C09A09 /* TabbarControllerRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		82C08855B35DA7C38CA05C2E /* Frameworks */ = {
@@ -488,7 +532,6 @@
 			files = (
 				5A7CB50123CE435900C09A09 /* LaunchScreen.storyboard in Resources */,
 				5A7CB4FE23CE435900C09A09 /* Assets.xcassets in Resources */,
-				5A7CB4FC23CE435800C09A09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,9 +642,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7CB4F923CE435800C09A09 /* ViewController.swift in Sources */,
+				5A7CB59223CE96DC00C09A09 /* AppDelegateRoutingEventsListener.swift in Sources */,
+				5A7CB58723CE929400C09A09 /* MainRoutingListenerAggregator.swift in Sources */,
 				5A7CB4F523CE435800C09A09 /* AppDelegate.swift in Sources */,
-				5A7CB4F723CE435800C09A09 /* SceneDelegate.swift in Sources */,
+				5A7CB58523CE928300C09A09 /* ProjectsRoutingListener.swift in Sources */,
+				5A7CB59423CE96F600C09A09 /* AppDelegateEvent.swift in Sources */,
+				5A7CB58A23CE92C900C09A09 /* ProjectsStep.swift in Sources */,
+				5A7CB58E23CE942A00C09A09 /* TabbarControllerRouter.swift in Sources */,
 				5A7CB54323CE642D00C09A09 /* ProjectsAdapter+Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7CB57923CE7F1000C09A09 /* ProjectsViewModel.swift in Sources */,
+				5A7CB58123CE921E00C09A09 /* ProjectsViewController.swift in Sources */,
 				5A7CB57723CE7F0800C09A09 /* ProjectsActions.swift in Sources */,
 				5A7CB56E23CE7D7C00C09A09 /* ProjectsModule.swift in Sources */,
 				5A7CB57523CE7EFE00C09A09 /* ProjectsState.swift in Sources */,
@@ -661,14 +709,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A7CB4FA23CE435800C09A09 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A7CB4FB23CE435800C09A09 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A7CB4FF23CE435900C09A09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -810,7 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = octoent.frameio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -830,7 +870,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = octoent.frameio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
