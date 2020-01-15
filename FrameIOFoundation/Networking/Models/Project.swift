@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Project: Decodable {
+public struct Project: Decodable, Equatable {
     public var id: String
     public var type: String?
     public var name: String
@@ -47,4 +47,6 @@ public struct Project: Decodable {
         
         teams = try relationships.decode(Team.self, forKey: .team)
     }
+    
+    public static func == (lhs: Project, rhs: Project) -> Bool { lhs.id == rhs.id }
 }

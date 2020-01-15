@@ -35,6 +35,12 @@
 		5A7CB56323CE7D0E00C09A09 /* ProjectsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A7CB56623CE7D0E00C09A09 /* ProjectsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */; };
 		5A7CB56723CE7D0E00C09A09 /* ProjectsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A7CB56E23CE7D7C00C09A09 /* ProjectsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB56D23CE7D7C00C09A09 /* ProjectsModule.swift */; };
+		5A7CB57523CE7EFE00C09A09 /* ProjectsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57423CE7EFE00C09A09 /* ProjectsState.swift */; };
+		5A7CB57723CE7F0800C09A09 /* ProjectsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57623CE7F0800C09A09 /* ProjectsActions.swift */; };
+		5A7CB57923CE7F1000C09A09 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57823CE7F1000C09A09 /* ProjectsViewModel.swift */; };
+		5A7CB57C23CE87FF00C09A09 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57B23CE87FF00C09A09 /* ObservableType.swift */; };
+		5A7CB57F23CE885500C09A09 /* weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7CB57E23CE885500C09A09 /* weakify.swift */; };
 		63871A832B988CE842431EE3 /* Pods_Modules_FrameIOFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E382AB1E84CA13CF30DDFA39 /* Pods_Modules_FrameIOFoundation.framework */; };
 		7BA9E13A0042C6D220AF875C /* Pods_Modules_ProjectsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +117,12 @@
 		5A7CB55F23CE7D0E00C09A09 /* ProjectsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProjectsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectsModule.h; sourceTree = "<group>"; };
 		5A7CB56223CE7D0E00C09A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7CB56D23CE7D7C00C09A09 /* ProjectsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsModule.swift; sourceTree = "<group>"; };
+		5A7CB57423CE7EFE00C09A09 /* ProjectsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsState.swift; sourceTree = "<group>"; };
+		5A7CB57623CE7F0800C09A09 /* ProjectsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsActions.swift; sourceTree = "<group>"; };
+		5A7CB57823CE7F1000C09A09 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		5A7CB57B23CE87FF00C09A09 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		5A7CB57E23CE885500C09A09 /* weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weakify.swift; sourceTree = "<group>"; };
 		5C028587EDE924626A00941D /* Pods-Modules-FrameIOFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.debug.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		9349152A0D9AB7DC7AB71AD9 /* Pods-Modules-FrameIOFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modules-FrameIOFoundation.release.xcconfig"; path = "Target Support Files/Pods-Modules-FrameIOFoundation/Pods-Modules-FrameIOFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		9D787D4E77DDE3F04582E730 /* Pods_Modules_ProjectsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modules_ProjectsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +272,8 @@
 		5A7CB55723CE79C000C09A09 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5A7CB57D23CE884F00C09A09 /* Functional */,
+				5A7CB57A23CE87EF00C09A09 /* RxExtensions */,
 				5A7CB55823CE79C900C09A09 /* Date.swift */,
 			);
 			path = Extensions;
@@ -269,9 +283,53 @@
 			isa = PBXGroup;
 			children = (
 				5A7CB56123CE7D0E00C09A09 /* ProjectsModule.h */,
+				5A7CB56D23CE7D7C00C09A09 /* ProjectsModule.swift */,
+				5A7CB56F23CE7E1200C09A09 /* Projects */,
 				5A7CB56223CE7D0E00C09A09 /* Info.plist */,
 			);
 			path = ProjectsModule;
+			sourceTree = "<group>";
+		};
+		5A7CB56F23CE7E1200C09A09 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB57023CE7E1C00C09A09 /* View */,
+				5A7CB57123CE7E2000C09A09 /* ViewModel */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		5A7CB57023CE7E1C00C09A09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A7CB57123CE7E2000C09A09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB57423CE7EFE00C09A09 /* ProjectsState.swift */,
+				5A7CB57623CE7F0800C09A09 /* ProjectsActions.swift */,
+				5A7CB57823CE7F1000C09A09 /* ProjectsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A7CB57A23CE87EF00C09A09 /* RxExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB57B23CE87FF00C09A09 /* ObservableType.swift */,
+			);
+			path = RxExtensions;
+			sourceTree = "<group>";
+		};
+		5A7CB57D23CE884F00C09A09 /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				5A7CB57E23CE885500C09A09 /* weakify.swift */,
+			);
+			path = Functional;
 			sourceTree = "<group>";
 		};
 		82C08855B35DA7C38CA05C2E /* Frameworks */ = {
@@ -399,6 +457,7 @@
 					};
 					5A7CB55E23CE7D0E00C09A09 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -559,7 +618,9 @@
 				5A7CB53423CE5F2F00C09A09 /* AppError.swift in Sources */,
 				5A7CB53D23CE603000C09A09 /* Request.swift in Sources */,
 				5A7CB55223CE72A600C09A09 /* APIDecodable.swift in Sources */,
+				5A7CB57F23CE885500C09A09 /* weakify.swift in Sources */,
 				5A7CB53923CE5FC000C09A09 /* ProjectsAdapter.swift in Sources */,
+				5A7CB57C23CE87FF00C09A09 /* ObservableType.swift in Sources */,
 				5A7CB55923CE79C900C09A09 /* Date.swift in Sources */,
 				5A7CB54823CE64AC00C09A09 /* ProjectsAPIConfigurable.swift in Sources */,
 				5A7CB53B23CE600300C09A09 /* NetworkingAdapter.swift in Sources */,
@@ -572,6 +633,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A7CB57923CE7F1000C09A09 /* ProjectsViewModel.swift in Sources */,
+				5A7CB57723CE7F0800C09A09 /* ProjectsActions.swift in Sources */,
+				5A7CB56E23CE7D7C00C09A09 /* ProjectsModule.swift in Sources */,
+				5A7CB57523CE7EFE00C09A09 /* ProjectsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +897,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4C6F87B0E62F4B125A648B6 /* Pods-Modules-ProjectsModule.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -849,6 +915,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = octoent.ProjectsModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -860,6 +927,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 530B2C15D69164456D241D8B /* Pods-Modules-ProjectsModule.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
