@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 
 public protocol ProjectsNetworkingProtocol where Self: NetworkingAdapter {
-    static func fetchProjects()-> Single<[Project]>
+    static func fetchProjects()-> Single<ProjectsContainer>
 }
 
 public class ProjectsAdapter: NetworkingAdapter {
@@ -26,16 +26,14 @@ public class ProjectsAdapter: NetworkingAdapter {
 }
 
 extension ProjectsAdapter: ProjectsNetworkingProtocol {
-    public static func fetchProjects() -> Single<[Project]> {
+    public static func fetchProjects() -> Single<ProjectsContainer> {
         let config = Requests
             .fetchProjects
             .configure
-            
-        let adapterRequest: Single<ProjectsContainer> = adapter
+        
+        return adapter
             .request(config)
             .decode()
-        
-        return adapterRequest.map { $0.projects }
     }
 }
 
@@ -45,7 +43,12 @@ private extension ProjectsAdapter {
         
         public var configure: RequestConfig {
             switch self {
-            case .fetchProjects: return RequestConfig(method: .get)
+            case .fetchProjects:
+                return RequestConfig(method: .get,
+                                     queryItems: [
+                                        URLQueryItem(name: "include",
+                                                     value: "team")
+                ])
             }
         }
     }

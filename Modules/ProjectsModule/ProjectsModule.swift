@@ -39,7 +39,10 @@ public class ProjectsModule: NSObject, ModuleProtocol, EventsProducer {
     }
     
     public func unmanagedRootViewController() -> UIViewController {
-        return UIViewController()
+        let viewModel = ProjectsViewModel(events: _events)
+        let view = ProjectsViewController(with: viewModel)
+        
+        return view
     }
 }
 

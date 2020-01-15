@@ -13,5 +13,3 @@ enum AppDelegateEvent: EventProtocol {
     // app start
     case willFinishLaunching(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
 }
-
-

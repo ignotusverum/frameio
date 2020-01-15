@@ -8,15 +8,21 @@
 
 import Foundation
 
-struct ProjectsContainer: Decodable {
+public struct ProjectsContainer: Decodable {
     public var projects: [Project]
+    public var teams: [Team]
     
     enum CodingKeys: String, CodingKey {
         case data
+        
+        case included
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        projects = try container.decode([Project].self, forKey: .data)
+        projects = try container.decode([Project].self,
+                                        forKey: .data)
+        
+        teams = (try? container.decode([Team].self, forKey: .included)) ?? []
     }
 }
